@@ -1,7 +1,7 @@
 const discord = require('discord.js')
 const client = new discord.Client()
 const {prefix, TOKEN} = require('./config.json')
-const ani = require('./anime/rand.json')
+const Hug = require('./anime/cuddle.json')
 
 client.on('ready', () =>{
     console.log(`${client.user.username} is online`)
@@ -12,23 +12,16 @@ client.on('message', msg =>{
     if (!msg.content.startsWith(prefix) || msg.author.bot) return;
     const args = msg.content.slice(prefix.length).trim().split(' ');
 	const command = args.shift().toLowerCase();
-    var randomgif = 0
-
-    var attachment = ['https://i.imgur.com/w3duR07.png']
-
-    
-
+    var HugGif = 0
 
     switch(command){
         
-
         case 'ping': msg.channel.send('pong'); break
         case 'avatar': msg.channel.send(msg.author.displayAvatarURL()); break
-        case 'rip': msg.channel.send(attachment); break
-        case 'gif': {
-            randomgif = ani[Math.floor(Math.random() * ani.length)];
-            msg.channel.send(randomgif); break
-            }
+        case 'hug': {
+            HugGif = Hug[Math.floor(Math.random() * Hug.length)];
+            msg.channel.send(HugGif); break
+        }
     }
 
 })
