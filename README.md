@@ -5,6 +5,6 @@ if you would like to use/commit this product feel free to. There will be and upd
 
 ## Check this stuff out
 
-- ![1botaday](https://github.com/ElixirDev/1botaday)
-- ![Old outdated bot](https://github.com/ElixirDev/AniBot)
-- ![Twitter](https://twitter.com/Opunte2)
+- [1botaday](https://github.com/ElixirDev/1botaday)
+- [Old outdated bot](https://github.com/ElixirDev/AniBot)
+- [Twitter](https://twitter.com/Opunte2)
