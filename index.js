@@ -12,29 +12,25 @@ client.on('message', msg =>{
     if (!msg.content.startsWith(prefix) || msg.author.bot) return;
     const args = msg.content.slice(prefix.length).trim().split(' ');
 	const command = args.shift().toLowerCase();
+    var randomgif = 0
 
-    //Ping command
-    if(command === 'ping'){
-        msg.channel.send('OK')
+    var attachment = ['https://i.imgur.com/w3duR07.png']
+
+    
+
+
+    switch(command){
+        
+
+        case 'ping': msg.channel.send('pong'); break
+        case 'avatar': msg.channel.send(msg.author.displayAvatarURL()); break
+        case 'rip': msg.channel.send(attachment); break
+        case 'gif': {
+            randomgif = ani[Math.floor(Math.random() * ani.length)];
+            msg.channel.send(randomgif); break
+            }
     }
 
-    //Basic avatar command
-    if (command === 'avatar') {
-        // Send the user's avatar URL
-        msg.channel.send(msg.author.displayAvatarURL());
-    }
-
-      //Rip command
-    if (command === 'rip') {
-        var attachment = ['https://i.imgur.com/w3duR07.png']
-        msg.channel.send(attachment);
-    }
-
-    if (command === 'gif'){
-        //Grabs link from json file and randomizes it
-        const randomgif = ani[Math.floor(Math.random() * ani.length)];
-        msg.channel.send(randomgif)
-    }
 })
 
 client.login(TOKEN)
